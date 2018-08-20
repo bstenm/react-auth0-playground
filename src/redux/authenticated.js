@@ -1,5 +1,5 @@
 export const authenticated = {
-      state: true,
+      state: false,
       reducers: {
             set(state, payload) {
                   return payload
