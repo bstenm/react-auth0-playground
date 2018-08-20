@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export const Component = ({authenticated}) => (
       <div className="Homepage" >
-            { authenticated ? 'Authenticated' : 'Not authenticated' }
+            Homepage - { authenticated ? 'Authenticated' : 'Not authenticated' }
       </div>
 );
 

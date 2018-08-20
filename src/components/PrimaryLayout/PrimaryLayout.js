@@ -1,15 +1,18 @@
 import './PrimaryLayout.css';
 import React from 'react';
 import Header from '../Header';
-import { BrowserRouter, Route } from 'react-router-dom';
+import UsersArea from '../UsersArea';
 import Homepage from '../Homepage';
+import { Route, Switch } from 'react-router-dom';
 
 const PrimaryLayout = () => (
       <div className="primary-layout">
             <Header />
             <main>
-                  <Route path="/" exact component={Homepage} />
-                  <Route path="/users" component={UsersPage} />
+                  <Switch>
+                        <Route path="/" exact component={Homepage} />
+                        <Route path="/users" component={UsersArea} />
+                  </Switch>
             </main>
       </div>
 );
