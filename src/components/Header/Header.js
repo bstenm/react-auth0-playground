@@ -28,6 +28,9 @@ export const Component = ({ authenticated }) => (
                               <LinkContainer to="/users">
                                     <NavItem>Users</NavItem>
                               </LinkContainer>
+                              <LinkContainer to="/about">
+                                    <NavItem>About</NavItem>
+                              </LinkContainer>
                         </Nav>
                   </Navbar.Collapse>
             </Navbar>

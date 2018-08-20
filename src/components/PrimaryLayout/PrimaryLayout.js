@@ -1,9 +1,12 @@
 import './PrimaryLayout.css';
 import React from 'react';
+import Users from '../Users';
+import About from '../About';
 import Header from '../Header';
-import UsersArea from '../UsersArea';
+import PropTypes from 'prop-types';
 import Homepage from '../Homepage';
-import { Route, Switch } from 'react-router-dom';
+import UserProfile from '../UserProfile';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 const PrimaryLayout = () => (
       <div className="primary-layout">
@@ -11,7 +14,10 @@ const PrimaryLayout = () => (
             <main>
                   <Switch>
                         <Route path="/" exact component={Homepage} />
-                        <Route path="/users" component={UsersArea} />
+                        <Route path="/about" component={About} />
+                        <Route path="/users/:userId" component={UserProfile} />
+                        <Route path="/users" component={Users} />
+                        <Redirect to="/" />
                   </Switch>
             </main>
       </div>
