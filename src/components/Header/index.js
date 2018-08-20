@@ -1,4 +1,4 @@
-import Component from './Header';
+import Component from './HeaderContainer';
 
 export default Component;
 

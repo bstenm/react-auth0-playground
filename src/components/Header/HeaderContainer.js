@@ -4,12 +4,15 @@ import Component from './Header';
 
 export class Container extends React.Component {
 
-render() {
-return (
-<Component { ...this.props } />
-);
-}
+      render() {
+            return (
+                  <Component { ...this.props } />
+            );
+      }
 };
 
-export default connect( null, null )( Container );
+export default connect(
+      ({ authenticated }) => ({ authenticated }),
+      ({ authenticated: { setSession }}) => ({ setSession })
+)( Container );
 
