@@ -1,11 +1,10 @@
 import './PrimaryLayout.css';
 import React from 'react';
-import Users from '../Users';
 import About from '../About';
 import Header from '../Header';
 import PropTypes from 'prop-types';
 import Homepage from '../Homepage';
-import UserProfile from '../UserProfile';
+import RequireAuth from '../RequireAuth';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 const PrimaryLayout = () => (
@@ -15,8 +14,7 @@ const PrimaryLayout = () => (
                   <Switch>
                         <Route path="/" exact component={Homepage} />
                         <Route path="/about" component={About} />
-                        <Route path="/users/:userId" component={UserProfile} />
-                        <Route path="/users" component={Users} />
+                        <Route path="/" component={RequireAuth} />
                         <Redirect to="/" />
                   </Switch>
             </main>
