@@ -1,4 +1,4 @@
-import Component from './CoreLayout';
+import Component from './CoreLayoutContainer';
 
 export default Component;
 

@@ -2,17 +2,17 @@ import './Loader.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const Component = ({ loading }) => (
+export const Component = () => (
       <div className="Loader" >
             <div style={{
                   position: "absolute",
                   height: "100%",
                   width: "100%",
-                  top: "50px",
+                  top: "0px",
                   left: "0px",
                   zIndex: "1000",
                   background: "white",
-                  opacity: "0.8"
+                  opacity: "0.9"
             }}></div>
             <div style={{
                   position: "absolute",
@@ -23,7 +23,7 @@ export const Component = ({ loading }) => (
             }}>
                   <span
                         title="Loading"
-                        style={{ fontSize: "25px", color: "#757575" }}
+                        style={{ fontSize: "15px", color: "#aaaaaa" }}
                         className="glyphicon glyphicon-refresh icon-refresh-animate"
                         aria-hidden="true"></span>
             </div>
