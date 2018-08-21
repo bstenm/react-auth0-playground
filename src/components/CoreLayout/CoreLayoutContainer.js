@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Component from './PrimaryLayout';
+import Component from './CoreLayout';
 
 export class Container extends React.Component {
 

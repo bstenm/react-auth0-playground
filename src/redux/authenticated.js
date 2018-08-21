@@ -7,6 +7,7 @@ export const authenticated = {
       },
       effects: (dispatch) => ({
             async setSession(payload, rootState) {
+                  dispatch.loading.start();
                   const { expiresIn, accessToken, idToken } = payload;
                   // Set the time that the Access Token will expire at
                   // [TODO]: replaced with jwt-decode ?
@@ -16,7 +17,15 @@ export const authenticated = {
                   localStorage.setItem('expires_at', expiresAt);
                   ////////////////////////////////
                   await new Promise(resolve => setTimeout(resolve, 1000))
-                  dispatch.authenticated.set(true)
+                  dispatch.authenticated.set(true);
+                  dispatch.loading.stop();
+            },
+            logout () {
+                  localStorage.removeItem('access_token');
+                  localStorage.removeItem('id_token');
+                  localStorage.removeItem('expires_at');
+                  // navigate to the home route
+                  dispatch.authenticated.set(false);
             }
       })
 }

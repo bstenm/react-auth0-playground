@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { LinkContainer } from "react-router-bootstrap";
 import { Navbar, Nav, NavItem, Glyphicon } from 'react-bootstrap';
 
-export const Component = ({ authenticated }) => (
+export const Component = ({ authenticated, login, logout }) => (
       <div className="header" >
             <Navbar inverse collapseOnSelect>
                   <Navbar.Header>
@@ -31,6 +31,10 @@ export const Component = ({ authenticated }) => (
                               <LinkContainer to="/about">
                                     <NavItem>About</NavItem>
                               </LinkContainer>
+                              { authenticated ? (
+                              <NavItem onClick={logout}>Logout</NavItem>) : (
+                              <NavItem onClick={login}>Login</NavItem>
+                              )}
                         </Nav>
                   </Navbar.Collapse>
             </Navbar>

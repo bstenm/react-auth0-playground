@@ -1,4 +1,4 @@
-import './PrimaryLayout.css';
+import './CoreLayout.css';
 import React from 'react';
 import About from '../About';
 import Header from '../Header';
@@ -7,7 +7,7 @@ import Homepage from '../Homepage';
 import RequireAuth from '../RequireAuth';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-const PrimaryLayout = () => (
+const CoreLayout = () => (
       <div className="primary-layout">
             <Header />
             <main>
@@ -23,5 +23,5 @@ const PrimaryLayout = () => (
 
 const UsersPage = () => <div>Users Page</div>
 
-export default PrimaryLayout;
+export default CoreLayout;
 
