@@ -1,10 +1,11 @@
 import './Header.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { auth0 } from '../../services/Auth0';
 import { LinkContainer } from "react-router-bootstrap";
 import { Navbar, Nav, NavItem, Glyphicon } from 'react-bootstrap';
 
-export const Component = ({ authenticated, login, logout }) => (
+export const Component = ({ authenticated, logout }) => (
       <div className="header" >
             <Navbar inverse collapseOnSelect>
                   <Navbar.Header>
@@ -33,7 +34,7 @@ export const Component = ({ authenticated, login, logout }) => (
                               </LinkContainer>
                               { authenticated ? (
                               <NavItem onClick={logout}>Logout</NavItem>) : (
-                              <NavItem onClick={login}>Login</NavItem>
+                              <NavItem onClick={() => auth0.authorize()}>Login</NavItem>
                               )}
                         </Nav>
                   </Navbar.Collapse>
