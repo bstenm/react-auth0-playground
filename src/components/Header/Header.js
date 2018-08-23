@@ -1,7 +1,7 @@
 import './Header.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { auth0 } from '../../services/Auth0';
+import { signIn } from '../../services/Auth0';
 import { LinkContainer } from "react-router-bootstrap";
 import { Navbar, Nav, NavItem, Glyphicon } from 'react-bootstrap';
 
@@ -34,7 +34,7 @@ export const Component = ({ authenticated, logout }) => (
                               </LinkContainer>
                               { authenticated ? (
                               <NavItem onClick={logout}>Logout</NavItem>) : (
-                              <NavItem onClick={() => auth0.authorize()}>Login</NavItem>
+                              <NavItem onClick={signIn}>Login</NavItem>
                               )}
                         </Nav>
                   </Navbar.Collapse>

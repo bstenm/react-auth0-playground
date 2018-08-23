@@ -3,5 +3,5 @@ export const auth0Config = {
       clientID: 'Zk0VvsYtvJWa68FVF690BFcL34OOjfDw',
       redirectUri: 'http://localhost:3000/authcallback',
       responseType: 'token id_token',
-      scope: 'openid'
+      scope: 'openid profile'
 };

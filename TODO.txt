@@ -1,0 +1,5 @@
+-- Revise how we check whether a user is currently authenticated
+
+-- Add internationalisation
+
+-- Find a way to start the loader as soon as auth0 redirects to our callback page rather than when we set the session in the local storage
