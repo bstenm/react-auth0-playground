@@ -8,7 +8,7 @@ import Homepage from '../Homepage';
 import RequireAuth from '../RequireAuth';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-const CoreLayout = ({ loading }) => (
+export const Component = ({ loading }) => (
       <div className="primary-layout">
             <Header />
             { loading && <Loader /> }
@@ -21,7 +21,16 @@ const CoreLayout = ({ loading }) => (
                   </Switch>
             </main>
       </div>
-);
+);;
 
-export default CoreLayout;
+Component.propTypes = {
+      loading: PropTypes.bool
+};
+
+Component.defaultProps = {
+      loading: false
+};
+
+
+export default Component;
 

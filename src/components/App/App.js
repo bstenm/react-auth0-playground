@@ -1,13 +1,16 @@
 import React from 'react';
+import { log } from '../../services/Log';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import CoreLayout from '../CoreLayout';
+import { handleAuthentication } from '../../services/Auth0';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
-export const Component = ({store, handleAuthentication}) => (
+export const Component = ({ setSession }) => (
       <BrowserRouter>
             <Switch>
                   <Route path="/authcallback" render={() => {
-                        handleAuthentication();
+                        handleAuthentication(setSession, log);
                         return <Redirect to="/"/>;
                   }}/>
                   <Route path="/" component={CoreLayout}/>
@@ -15,7 +18,12 @@ export const Component = ({store, handleAuthentication}) => (
       </BrowserRouter>
 );
 
-Component.propTypes = { };
+Component.propTypes = {
+      setSession: PropTypes.func.isRequired
+};
 
-export default Component;
+export default connect(
+      ({ authenticated }) => ({ authenticated }),
+      ({ authenticated: { setSession }}) => ({ setSession })
+)(Component);
 

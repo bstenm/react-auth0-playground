@@ -1,14 +1,11 @@
 import './About.css';
 import React from 'react';
-import PropTypes from 'prop-types';
 
-export const Component = props => (
+export const Component = () => (
       <div className="About" >
             About
       </div>
 );
-
-Component.propTypes = { };
 
 export default Component;
 

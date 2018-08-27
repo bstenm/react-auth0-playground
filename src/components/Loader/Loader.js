@@ -1,6 +1,5 @@
 import './Loader.css';
 import React from 'react';
-import PropTypes from 'prop-types';
 /*
 <div class="lds-css ng-scope">
 <div class="lds-blocks" style="100%;height:100%"><div style="left:57px;top:57px;animation-delay:0s"></div><div style="left:103px;top:57px;animation-delay:0.425s"></div><div style="left:57px;top:103px;animation-delay:1.275s"></div><div style="left:103px;top:103px;animation-delay:0.85s"></div></div>
@@ -79,8 +78,6 @@ export const Component = () => (
             </div>
       </div>
 );
-
-Component.propTypes = { };
 
 export default Component;
 

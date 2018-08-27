@@ -16,7 +16,13 @@ export const Component = ({ authenticated }) => (
       </div>
 );
 
-Component.propTypes = { };
+Component.propTypes = {
+      authenticated: PropTypes.bool.isRequired
+};
+
+Component.defaultProps = {
+      authenticated: false
+};
 
 export default Component;
 
