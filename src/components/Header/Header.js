@@ -21,11 +21,6 @@ export const Component = ({ authenticated, logout }) => (
                   </Navbar.Header>
                   <Navbar.Collapse>
                         <Nav pullRight>
-                              { authenticated && (
-                              <LinkContainer to="/users/1">
-                                    <NavItem>Your Profile</NavItem>
-                              </LinkContainer>
-                              )}
                               <LinkContainer to="/users">
                                     <NavItem>Users</NavItem>
                               </LinkContainer>

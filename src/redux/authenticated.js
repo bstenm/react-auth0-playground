@@ -6,6 +6,12 @@ export const authenticated = {
             }
       },
       effects: (dispatch) => ({
+            isAuthenticated() {
+                  const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
+                  const accessToken = localStorage.getItem('access_token');
+                  const validToken = accessToken && (new Date().getTime() < expiresAt);
+                  dispatch.authenticated.set(validToken);
+            },
             async setSession(payload, rootState) {
                   dispatch.loading.start();
                   const { expiresIn, accessToken, idToken } = payload;
@@ -15,8 +21,6 @@ export const authenticated = {
                   localStorage.setItem('id_token', idToken);
                   localStorage.setItem('access_token', accessToken);
                   localStorage.setItem('expires_at', expiresAt);
-                  ////////////////////////////////
-                  await new Promise(resolve => setTimeout(resolve, 1000))
                   dispatch.authenticated.set(true);
                   dispatch.loading.stop();
             },
