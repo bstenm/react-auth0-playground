@@ -1,3 +1,9 @@
-.primary-layout {
+.CoreLayout {
       text-align: center;
+}
+
+.CoreLayout .Loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
 }

@@ -3,15 +3,21 @@ import React from 'react';
 import About from '../About';
 import Loader from '../Loader';
 import Header from '../Header';
+import Dimmer from '../Dimmer';
 import PropTypes from 'prop-types';
 import Homepage from '../Homepage';
 import RequireAuth from '../RequireAuth';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 export const Component = ({ loading }) => (
-      <div className="primary-layout">
+      <div className="CoreLayout">
             <Header />
-            { loading && <Loader /> }
+            { loading && (
+                  <div>
+                        <Dimmer />
+                        <Loader />
+                  </div>
+                  )}
             <main>
                   <Switch>
                         <Route path="/" exact component={Homepage} />
