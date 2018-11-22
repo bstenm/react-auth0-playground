@@ -9,6 +9,32 @@ import Homepage from '../Homepage';
 import RequireAuth from '../RequireAuth';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
+import { connect } from 'react-redux';
+const RouteWithLoader = ({path, Component}) => (
+      <Route path={path} render={() => (
+            <Wrapped>
+                  <Component />
+            </Wrapped>
+      )} />
+)
+
+class WithLoader extends React.Component {
+
+      componentWillMount () {
+            this.props.start();
+      }
+
+      componentDidMount () {
+            this.props.stop();
+      }
+
+      render () {
+            return this.props.children;
+      }
+};
+
+const Wrapped = connect(null, ({ loading: { start, stop }}) => ({ start, stop }))(WithLoader);
+
 export const Component = ({ loading }) => (
       <div className="CoreLayout">
             <Header />
@@ -17,11 +43,11 @@ export const Component = ({ loading }) => (
                         <Dimmer />
                         <Loader />
                   </div>
-                  )}
+            )}
             <main>
                   <Switch>
                         <Route path="/" exact component={Homepage} />
-                        <Route path="/about" component={About} />
+                        <RouteWithLoader path="/about" Component={About} />
                         <Route path="/" component={RequireAuth} />
                         <Redirect to="/" />
                   </Switch>
