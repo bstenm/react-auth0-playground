@@ -1,4 +1,4 @@
-### Using Auth0 with CRA
+### Auth0 Playground with CRA
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
